@@ -7,10 +7,12 @@
 ## 📘 Educational Background
 🎓 Bachelor of Science in **Science Laboratory Technology**  
 🏫 University of Benin — Graduated 2015  
+Certification: **Software Dev/Al for Software Engineering**
+Power Learn Project Academy -- 2025
 
 
 ## 🛠 Skills
-- ✅ HTML5, CSS  
+- ✅ HTML5, CSS, JavaScript, Website Design, Debugging 
 - ✅ Git & GitHub  
 - ✅ WhatsApp Bot Integration  
 - 🧠 Currently Learning: JavaScript, Python, UI/UX  
