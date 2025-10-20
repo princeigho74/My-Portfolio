@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Igho Umukoro - Full Stack Developer & AI Engineer</title>
+  <meta name="description" content="Happy Igho Umukoro - Software Developer & AI for Software Engineering Specialist">
+  <meta name="theme-color" content="#4B0082">
+  <title>Happy Igho Umukoro - Software Developer & AI Engineer</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome for Icons -->
@@ -14,35 +16,39 @@
       padding: 0;
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #f4f4f9 0%, #e8e8f0 100%);
       color: #333;
       line-height: 1.6;
+      min-height: 100vh;
     }
     header {
       background: linear-gradient(135deg, #4B0082 0%, #6A0DAD 100%);
       color: #fff;
-      padding: 4rem 1rem;
+      padding: 3rem 1rem;
       text-align: center;
       box-shadow: 0 4px 12px rgba(75, 0, 130, 0.3);
     }
     header h1 {
-      margin: 0;
-      font-size: 2.8rem;
+      margin: 0 0 0.5rem 0;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
       font-weight: 700;
-      margin-bottom: 0.5rem;
     }
     header .tagline {
-      font-size: 1.3rem;
+      font-size: clamp(1rem, 4vw, 1.3rem);
       font-weight: 600;
       margin-bottom: 0.8rem;
       color: #FFD700;
     }
     header p {
-      font-size: 1rem;
-      margin: 0.3rem 0;
+      font-size: clamp(0.9rem, 3vw, 1rem);
+      margin: 0.3rem auto;
       opacity: 0.95;
+      max-width: 600px;
     }
     nav {
       background: #222;
@@ -52,26 +58,30 @@
       top: 0;
       z-index: 100;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      overflow-x: auto;
     }
     nav a {
       color: #fff;
-      margin: 0 1.2rem;
+      margin: 0 0.8rem;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s ease;
+      white-space: nowrap;
+      display: inline-block;
+      padding: 0.5rem 0;
     }
     nav a:hover {
       color: #FFD700;
     }
     section {
-      padding: 3.5rem 1rem;
+      padding: 2.5rem 1rem;
       max-width: 1000px;
-      margin: auto;
+      margin: 0 auto;
     }
     h2 {
       color: #4B0082;
       margin-bottom: 1.5rem;
-      font-size: 2rem;
+      font-size: clamp(1.6rem, 5vw, 2rem);
       font-weight: 700;
       border-bottom: 3px solid #FFD700;
       padding-bottom: 0.5rem;
@@ -79,13 +89,18 @@
     }
     .about-content {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 2rem;
-      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr 1fr;
+      }
     }
     .about-text p {
       margin-bottom: 1rem;
-      font-size: 1.05rem;
+      font-size: 1rem;
+      line-height: 1.7;
     }
     .expertise-highlights {
       background: #fff;
@@ -96,7 +111,7 @@
     .expertise-highlights h3 {
       color: #4B0082;
       margin-bottom: 1rem;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
     }
     .expertise-tag {
       display: inline-block;
@@ -105,17 +120,27 @@
       padding: 0.4rem 0.8rem;
       border-radius: 20px;
       margin: 0.3rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
     }
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 1fr;
       gap: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
     .card {
       background: #fff;
-      padding: 1.8rem;
+      padding: 1.5rem;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -128,7 +153,7 @@
     .card h3 {
       margin-top: 0;
       color: #4B0082;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-bottom: 1rem;
     }
     .card ul {
@@ -138,13 +163,15 @@
     .card li {
       padding: 0.5rem 0;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
+      font-size: 0.95rem;
     }
     .card li:before {
       content: "▸";
       color: #FFD700;
       margin-right: 0.8rem;
       font-weight: bold;
+      flex-shrink: 0;
     }
     a {
       color: #4B0082;
@@ -158,16 +185,28 @@
     }
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: 1fr;
       gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1200px) {
+      .projects {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
     .project-card {
       background: #fff;
-      padding: 1.8rem;
+      padding: 1.5rem;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
       border-top: 4px solid #FFD700;
+      display: flex;
+      flex-direction: column;
     }
     .project-card:hover {
       transform: translateY(-8px);
@@ -176,16 +215,20 @@
     .project-card h3 {
       color: #4B0082;
       margin-bottom: 0.8rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
     .project-card p {
       color: #666;
       margin-bottom: 1rem;
       line-height: 1.5;
+      font-size: 0.95rem;
+      flex-grow: 1;
     }
     .project-links {
       display: flex;
       gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: auto;
     }
     .project-links a {
       display: inline-flex;
@@ -195,8 +238,12 @@
       background: linear-gradient(135deg, #4B0082, #6A0DAD);
       color: #fff;
       border-radius: 8px;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       transition: opacity 0.3s ease;
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+      justify-content: center;
     }
     .project-links a:hover {
       opacity: 0.85;
@@ -204,8 +251,18 @@
     }
     .contact {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: 1fr;
       gap: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .contact {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .contact {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
     .contact-card {
       background: #fff;
@@ -223,6 +280,10 @@
       color: #4B0082;
       margin-bottom: 0.8rem;
     }
+    .contact-card p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
     footer {
       background: #222;
       color: #fff;
@@ -230,6 +291,7 @@
       padding: 1.5rem;
       margin-top: 2rem;
       border-top: 3px solid #FFD700;
+      font-size: 0.9rem;
     }
     blockquote {
       border-left: 4px solid #FFD700;
@@ -237,28 +299,22 @@
       font-style: italic;
       color: #555;
       margin: 1.5rem 0;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
-    @media (max-width: 768px) {
-      header h1 { 
-        font-size: 2rem; 
+    @media (max-width: 480px) {
+      header {
+        padding: 2rem 1rem;
       }
-      header .tagline {
-        font-size: 1rem;
+      section {
+        padding: 2rem 1rem;
       }
-      .about-content {
-        grid-template-columns: 1fr;
-      }
-      nav a { 
-        display: inline-block;
-        margin: 0.3rem 0.5rem; 
+      nav a {
+        margin: 0 0.5rem;
         font-size: 0.9rem;
       }
-      h2 {
-        font-size: 1.6rem;
-      }
-      .skills-grid, .projects {
-        grid-template-columns: 1fr;
+      .project-links a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -359,9 +415,9 @@
     <div class="card" style="max-width: 600px;">
       <p><strong>🎓 Bachelor of Science in Science Laboratory Technology</strong></p>
       <p><strong>🏫 University of Benin</strong> — Graduated 2015</p>
-      <p><strong>📜 Professional Certification:</strong></p>
+      <p style="margin-top: 1rem;"><strong>📜 Professional Certification:</strong></p>
       <p>Software Development & AI for Software Engineering — <em>Power Learn Project Academy</em> (2025)</p>
-      <p style="margin-top: 1rem;"><a href="https://github.com/princeigho74/PLP-PORTFOLIO-HACKATHON/blob/main/CV.pdf" target="_blank">📄 📥 Download My CV</a></p>
+      <p style="margin-top: 1.5rem;"><a href="https://github.com/princeigho74/PLP-PORTFOLIO-HACKATHON/blob/main/CV.pdf" target="_blank">📄 📥 Download My CV</a></p>
     </div>
   </section>
 
@@ -418,50 +474,43 @@
         <h3>🔸 PLP Portfolio Website</h3>
         <p>My entry for the <strong>PLP Hackathon 2025</strong>. A responsive portfolio showcasing modern web design principles with semantic HTML5, clean architecture, and optimal performance. Hosted on GitHub Pages.</p>
         <div class="project-links">
-          <a href="https://princeigho74.github.io/PLP-PORTFOLIO-HACKATHON/" target="_blank">🌐 View Project</a>
+          <a href="https://princeigho74.github.io/PLP-PORTFOLIO-HACKATHON/" target="_blank">🌐 View</a>
           <a href="https://github.com/princeigho74/PLP-PORTFOLIO-HACKATHON" target="_blank">📂 GitHub</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>🔸 SmartXpress Platform</h3>
-        <p>A comprehensive business solution providing fast, affordable data & utility services to Nigerians. Combines frontend user interface design with backend services integration, demonstrating full-stack development capabilities.</p>
-        <div class="project-links">
-          <a href="https://github.com/princeigho74/SmartXpress" target="_blank">📂 GitHub Repo</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>💳 ASSA Payments Tracker</h3>
-        <p>A comprehensive financial management tool for tracking payments and transactions. Built with modern frontend architecture for real-time payment monitoring and financial analytics.</p>
-        <div class="project-links">
-          <a href="https://assa-payments-tracker.vercel.app/" target="_blank">🌐 View Project</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>🌾 AgriLink360 - SDG Project</h3>
-        <p>An AI-powered agricultural platform addressing UN Sustainable Development Goals. Integrates machine learning for crop optimization and connects farmers with resources for sustainable agriculture.</p>
-        <div class="project-links">
-          <a href="https://agrilink360-app-plp-sdg-project.vercel.app/" target="_blank">🌐 View Project</a>
         </div>
       </div>
       <div class="project-card">
         <h3>🏢 ASSA Website</h3>
         <p>Professional corporate website showcasing modern web design with responsive UI/UX, smooth navigation, and brand storytelling. Demonstrates clean code architecture and user-centered design principles.</p>
         <div class="project-links">
-          <a href="https://assa-website.vercel.app/" target="_blank">🌐 View Project</a>
+          <a href="https://assa-website.vercel.app/" target="_blank">🌐 View</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>💳 ASSA Payments Tracker</h3>
+        <p>A comprehensive financial management tool for tracking payments and transactions. Built with modern frontend architecture for real-time payment monitoring and financial analytics.</p>
+        <div class="project-links">
+          <a href="https://assa-payments-tracker.vercel.app/" target="_blank">🌐 View</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>🌾 AgriLink360 - SDG Project</h3>
+        <p>An AI-powered agricultural platform addressing UN Sustainable Development Goals. Integrates machine learning for crop optimization and connects farmers with resources for sustainable agriculture.</p>
+        <div class="project-links">
+          <a href="https://agrilink360-app-plp-sdg-project.vercel.app/" target="_blank">🌐 View</a>
         </div>
       </div>
       <div class="project-card">
         <h3>🎯 My Vibe Coding Hackathon</h3>
         <p>An innovative submission for the Vibe Coding Hackathon featuring AgriLink360. Showcases rapid prototyping, creative problem-solving, and integration of AI/ML concepts with practical web solutions.</p>
         <div class="project-links">
-          <a href="https://agrilink360-vibe-coding-hackathon.vercel.app/" target="_blank">🌐 View Project</a>
+          <a href="https://agrilink360-vibe-coding-hackathon.vercel.app/" target="_blank">🌐 View</a>
         </div>
       </div>
       <div class="project-card">
         <h3>🚀 AgriLink360 - AI/ML Assignment</h3>
         <p>A sophisticated agricultural platform leveraging AI and machine learning technologies. Demonstrates advanced integration of AI algorithms with full-stack web development for intelligent farming solutions.</p>
         <div class="project-links">
-          <a href="https://week2-ai-ml-assignment-agrilink360.vercel.app/" target="_blank">🌐 View Project</a>
+          <a href="https://week2-ai-ml-assignment-agrilink360.vercel.app/" target="_blank">🌐 View</a>
         </div>
       </div>
     </div>
@@ -494,7 +543,7 @@
   </section>
 
   <footer>
-    &copy; 2025 Happy Igho Umukoro | Full Stack Developer & AI Engineer | Built with 💻 HTML, CSS, JavaScript & Passion
+    &copy; 2025 Happy Igho Umukoro | Software Developer & AI Engineer | Built with 💻 HTML, CSS & Passion
   </footer>
 </body>
 </html>
