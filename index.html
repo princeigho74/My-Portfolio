@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Igho Umukoro - Full Stack Developer & AI Engineer</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f4f4f9 0%, #e8e8f0 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #4B0082 0%, #6A0DAD 100%);
+      color: #fff;
+      padding: 4rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(75, 0, 130, 0.3);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    header .tagline {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: #FFD700;
+    }
+    header p {
+      font-size: 1rem;
+      margin: 0.3rem 0;
+      opacity: 0.95;
+    }
+    nav {
+      background: #222;
+      text-align: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #FFD700;
+    }
+    section {
+      padding: 3.5rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #4B0082;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+      border-bottom: 3px solid #FFD700;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .about-text p {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+    .expertise-highlights {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .expertise-highlights h3 {
+      color: #4B0082;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    .expertise-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #4B0082, #6A0DAD);
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      margin: 0.3rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #fff;
+      padding: 1.8rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 5px solid #FFD700;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(75, 0, 130, 0.2);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #4B0082;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .card li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+    }
+    .card li:before {
+      content: "▸";
+      color: #FFD700;
+      margin-right: 0.8rem;
+      font-weight: bold;
+    }
+    a {
+      color: #4B0082;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #6A0DAD;
+      text-decoration: underline;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: #fff;
+      padding: 1.8rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      border-top: 4px solid #FFD700;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(75, 0, 130, 0.2);
+    }
+    .project-card h3 {
+      color: #4B0082;
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+    }
+    .project-card p {
+      color: #666;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      background: linear-gradient(135deg, #4B0082, #6A0DAD);
+      color: #fff;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: opacity 0.3s ease;
+    }
+    .project-links a:hover {
+      opacity: 0.85;
+      text-decoration: none;
+    }
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .contact-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+    .contact-card i {
+      font-size: 2rem;
+      color: #4B0082;
+      margin-bottom: 0.8rem;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-top: 3px solid #FFD700;
+    }
+    blockquote {
+      border-left: 4px solid #FFD700;
+      padding-left: 1.5rem;
+      font-style: italic;
+      color: #555;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+    @media (max-width: 768px) {
+      header h1 { 
+        font-size: 2rem; 
+      }
+      header .tagline {
+        font-size: 1rem;
+      }
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      nav a { 
+        display: inline-block;
+        margin: 0.3rem 0.5rem; 
+        font-size: 0.9rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      .skills-grid, .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Happy Igho Umukoro</h1>
+    <p class="tagline">🚀 Software Developer | AI for Software Engineering Specialist</p>
+    <p>📍 Nigeria | 💡 Building intelligent, scalable software solutions</p>
+    <p>Full Stack Developer with expertise in AI integration, automation & intelligent systems</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>📝 About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Hello! I'm <strong>Happy Igho Umukoro</strong>, a passionate Software Developer specializing in AI for Software Engineering. I create intelligent, scalable solutions that leverage artificial intelligence and machine learning to solve complex problems.</p>
+        <p>With expertise across the full software development stack—frontend, backend, and AI integration—I build end-to-end solutions that combine clean code architecture with intelligent automation and data-driven insights.</p>
+        <blockquote><em>💡 "I build intelligent software. Technology + AI = Innovation."</em></blockquote>
+      </div>
+      <div class="expertise-highlights">
+        <h3>⚡ Core Competencies</h3>
+        <div>
+          <span class="expertise-tag">AI for Software Engineering</span>
+          <span class="expertise-tag">Full Stack Development</span>
+          <span class="expertise-tag">Machine Learning</span>
+          <span class="expertise-tag">Software Architecture</span>
+          <span class="expertise-tag">Backend Development</span>
+          <span class="expertise-tag">Frontend Development</span>
+          <span class="expertise-tag">AI Integration</span>
+          <span class="expertise-tag">Intelligent Systems</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <h2>🎯 Areas of Expertise</h2>
+    <div class="skills-grid">
+      <div class="card">
+        <h3>🤖 AI for Software Engineering</h3>
+        <ul>
+          <li>Machine Learning Integration</li>
+          <li>AI-Powered Automation</li>
+          <li>Intelligent Algorithms & Systems</li>
+          <li>Data Processing & Analysis</li>
+          <li>Python & Advanced Programming</li>
+          <li>AI Problem-Solving</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>💻 Full Stack Development</h3>
+        <ul>
+          <li>Frontend Architecture & UI Development</li>
+          <li>Backend Systems & APIs</li>
+          <li>Database Design & Management</li>
+          <li>Cloud Deployment & DevOps</li>
+          <li>End-to-End Solution Design</li>
+          <li>Software Performance Optimization</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🔧 Backend & Infrastructure</h3>
+        <ul>
+          <li>Server Architecture Design</li>
+          <li>RESTful API Development</li>
+          <li>Authentication & Security</li>
+          <li>Database Architecture</li>
+          <li>System Integration</li>
+          <li>Scalable Systems</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🎨 Frontend Development</h3>
+        <ul>
+          <li>Responsive UI Design</li>
+          <li>HTML5 & Semantic Markup</li>
+          <li>JavaScript (ES6+) & Modern Frameworks</li>
+          <li>CSS3 & Advanced Styling</li>
+          <li>Component Architecture</li>
+          <li>User Experience Optimization</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>🎓 Educational Background</h2>
+    <div class="card" style="max-width: 600px;">
+      <p><strong>🎓 Bachelor of Science in Science Laboratory Technology</strong></p>
+      <p><strong>🏫 University of Benin</strong> — Graduated 2015</p>
+      <p><strong>📜 Professional Certification:</strong></p>
+      <p>Software Development & AI for Software Engineering — <em>Power Learn Project Academy</em> (2025)</p>
+      <p style="margin-top: 1rem;"><a href="https://github.com/princeigho74/PLP-PORTFOLIO-HACKATHON/blob/main/CV.pdf" target="_blank">📄 📥 Download My CV</a></p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>🛠 Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="card">
+        <h3>💻 Core Technologies</h3>
+        <ul>
+          <li>HTML5, CSS3, JavaScript (ES6+)</li>
+          <li>React, Vue.js, Responsive Web Design</li>
+          <li>Node.js, Express.js, Backend APIs</li>
+          <li>Git & GitHub, Version Control</li>
+          <li>Debugging & Code Optimization</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🤖 AI & Data Science</h3>
+        <ul>
+          <li>Python Programming</li>
+          <li>Machine Learning Basics</li>
+          <li>Data Processing & Analysis</li>
+          <li>AI Integration in Web Apps</li>
+          <li>Problem-Solving Algorithms</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>📱 Specialized Skills</h3>
+        <ul>
+          <li>WhatsApp Bot Integration</li>
+          <li>UI/UX Design Principles</li>
+          <li>API Design & Integration</li>
+          <li>Database Architecture</li>
+          <li>Web Performance Tuning</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🧠 Currently Learning</h3>
+        <ul>
+          <li>Advanced JavaScript Patterns</li>
+          <li>Python & AI/ML Advanced Concepts</li>
+          <li>UI/UX Design Tools & Methods</li>
+          <li>Cloud Computing (AWS, GCP)</li>
+          <li>DevOps & Containerization</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>🔥 Featured Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>🔸 PLP Portfolio Website</h3>
+        <p>My entry for the <strong>PLP Hackathon 2025</strong>. A responsive portfolio showcasing modern web design principles with semantic HTML5, clean architecture, and optimal performance. Hosted on GitHub Pages.</p>
+        <div class="project-links">
+          <a href="https://princeigho74.github.io/PLP-PORTFOLIO-HACKATHON/" target="_blank">🌐 View Project</a>
+          <a href="https://github.com/princeigho74/PLP-PORTFOLIO-HACKATHON" target="_blank">📂 GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>🔸 SmartXpress Platform</h3>
+        <p>A comprehensive business solution providing fast, affordable data & utility services to Nigerians. Combines frontend user interface design with backend services integration, demonstrating full-stack development capabilities.</p>
+        <div class="project-links">
+          <a href="https://github.com/princeigho74/SmartXpress" target="_blank">📂 GitHub Repo</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>💳 ASSA Payments Tracker</h3>
+        <p>A comprehensive financial management tool for tracking payments and transactions. Built with modern frontend architecture for real-time payment monitoring and financial analytics.</p>
+        <div class="project-links">
+          <a href="https://assa-payments-tracker.vercel.app/" target="_blank">🌐 View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>🌾 AgriLink360 - SDG Project</h3>
+        <p>An AI-powered agricultural platform addressing UN Sustainable Development Goals. Integrates machine learning for crop optimization and connects farmers with resources for sustainable agriculture.</p>
+        <div class="project-links">
+          <a href="https://agrilink360-app-plp-sdg-project.vercel.app/" target="_blank">🌐 View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>🏢 ASSA Website</h3>
+        <p>Professional corporate website showcasing modern web design with responsive UI/UX, smooth navigation, and brand storytelling. Demonstrates clean code architecture and user-centered design principles.</p>
+        <div class="project-links">
+          <a href="https://assa-website.vercel.app/" target="_blank">🌐 View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>🎯 My Vibe Coding Hackathon</h3>
+        <p>An innovative submission for the Vibe Coding Hackathon featuring AgriLink360. Showcases rapid prototyping, creative problem-solving, and integration of AI/ML concepts with practical web solutions.</p>
+        <div class="project-links">
+          <a href="https://agrilink360-vibe-coding-hackathon.vercel.app/" target="_blank">🌐 View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>🚀 AgriLink360 - AI/ML Assignment</h3>
+        <p>A sophisticated agricultural platform leveraging AI and machine learning technologies. Demonstrates advanced integration of AI algorithms with full-stack web development for intelligent farming solutions.</p>
+        <div class="project-links">
+          <a href="https://week2-ai-ml-assignment-agrilink360.vercel.app/" target="_blank">🌐 View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>📬 Connect with Me</h2>
+    <div class="contact">
+      <div class="contact-card">
+        <i class="fa-solid fa-envelope"></i>
+        <p><strong>Email</strong></p>
+        <p><a href="mailto:princeigho74@gmail.com">princeigho74@gmail.com</a></p>
+      </div>
+      <div class="contact-card">
+        <i class="fa-brands fa-whatsapp"></i>
+        <p><strong>WhatsApp</strong></p>
+        <p><a href="https://wa.me/2348065202102" target="_blank">+234 806 520 2102</a></p>
+      </div>
+      <div class="contact-card">
+        <i class="fa-brands fa-github"></i>
+        <p><strong>GitHub</strong></p>
+        <p><a href="https://github.com/princeigho74" target="_blank">@princeigho74</a></p>
+      </div>
+      <div class="contact-card">
+        <i class="fa-brands fa-linkedin"></i>
+        <p><strong>LinkedIn</strong></p>
+        <p><a href="https://www.linkedin.com/in/happy-igho-umukoro-b62b07129" target="_blank">Happy Igho Umukoro</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Happy Igho Umukoro | Full Stack Developer & AI Engineer | Built with 💻 HTML, CSS, JavaScript & Passion
+  </footer>
+</body>
+</html>
